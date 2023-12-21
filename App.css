@@ -1,0 +1,59 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(to right, #5e594f, #2b220e);
+}
+
+.claculator-grid {
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: minmax(7em, auto) repeat(5, 4rem);
+}
+
+.claculator-grid > button{
+  cursor: copy ;
+  font-size: 1.5rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, .75);
+}
+
+.claculator-grid > button:hover,
+.claculator-grid > button:focus{
+  background-color: rgb(170, 227, 227);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  background-color: rgb(13, 34, 34);
+  /* grid-column:span 4*/
+  grid-column: 1/-1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 0.5rem;
+  /* break when they reach End of Line */
+  word-wrap: break-word;
+  /* breaks long word and put in next line */
+  word-break: break-all;
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, .75);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+}
